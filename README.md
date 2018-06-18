@@ -11,3 +11,31 @@ npm i --save react-render-as
 ```
 
 ## Usage
+
+### Creating simple components
+
+```jsx
+import { renderAs } from 'react-render-as';
+
+const SomeComponent = ({ name }) => (<div>Hello {name}!</div>);
+
+const Bold = renderAs('b');
+
+(<Bold>This is bold</Bold>) // <b>This is bold</b>
+
+(<Bold as="i">Tricked you its italics</Bold>) // <i>Tricked you its italics</i>
+
+(<Bold as={SomeComponent} />) // <div>Hello !</div>
+
+(<Bold as={<SomeComponent name="Joe" />} />) // <div>Hello Joe!</div>
+```
+
+### Using the HOC
+
+```jsx
+import { withAs } from 'react-render-as';
+
+const Table = ({ children }) => children;
+
+export default withAs(Table, 'table');
+```
