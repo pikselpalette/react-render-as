@@ -187,4 +187,12 @@ describe('renderAs', () => {
 
     sharedTests(TestFunctionalComponent);
   });
+
+  describe('when passed another renderAs component', () => {
+    beforeEach(() => {
+      Component = renderAs(renderAs(TestFunctionalComponent));
+    });
+
+    sharedTests(TestFunctionalComponent);
+  });
 });
