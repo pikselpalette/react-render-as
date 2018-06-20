@@ -196,14 +196,17 @@ describe('renderAs', () => {
       WrappedRenderAs = renderAs('div');
       Component = renderAs(WrappedRenderAs);
 
-      component = mount(<Component />);
+      component = mount(<Component as={WrappedRenderAs} />);
     });
 
     sharedTests('div');
 
     it('will render the original renderAs', () => {
-      console.log(component.debug(), WrappedRenderAs.displayName);
       expect(component.find(WrappedRenderAs)).toHaveLength(1);
+    });
+
+    it('sets the original renderAs as prop to its default', () => {
+      expect(component.find(WrappedRenderAs)).toHaveProp('as', 'div');
     });
 
     describe('when as set', () => {
