@@ -1,7 +1,7 @@
 {
   "name": "react-render-as",
   "description": "Utility for creating components which accept the `as` prop in React",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Sam Boylett <sam.boylett@piksel.com>",
   "main": "dist/index.js",
   "scripts": {

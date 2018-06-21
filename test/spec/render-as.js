@@ -187,4 +187,36 @@ describe('renderAs', () => {
 
     sharedTests(TestFunctionalComponent);
   });
+
+  describe('when passed another renderAs component', () => {
+    let WrappedRenderAs;
+    let component;
+
+    beforeEach(() => {
+      WrappedRenderAs = renderAs('div');
+      Component = renderAs(WrappedRenderAs);
+
+      component = mount(<Component as={WrappedRenderAs} />);
+    });
+
+    sharedTests('div');
+
+    it('will render the original renderAs', () => {
+      expect(component.find(WrappedRenderAs)).toHaveLength(1);
+    });
+
+    it('sets the original renderAs as prop to its default', () => {
+      expect(component.find(WrappedRenderAs)).toHaveProp('as', 'div');
+    });
+
+    describe('when as set', () => {
+      beforeEach(() => {
+        component.setProps({ as: 'p' });
+      });
+
+      it('renders the wrapped render as with the new as prop', () => {
+        expect(component.find(WrappedRenderAs)).toHaveProp('as', 'p');
+      });
+    });
+  });
 });
