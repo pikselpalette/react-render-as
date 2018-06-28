@@ -7,6 +7,7 @@
 [![devDependencies Status](https://david-dm.org/pikselpalette/react-render-as/dev-status.svg)](https://david-dm.org/pikselpalette/react-render-as?type=dev)
 [![peerDependencies Status](https://david-dm.org/pikselpalette/react-render-as/peer-status.svg)](https://david-dm.org/pikselpalette/react-render-as?type=peer)
 [![codecov](https://codecov.io/gh/pikselpalette/react-render-as/branch/master/graph/badge.svg)](https://codecov.io/gh/pikselpalette/react-render-as)
+[![Mutation testing badge](https://badge.stryker-mutator.io/github.com/pikselpalette/react-render-as/master)](https://stryker-mutator.github.io)
 
 This library lets you easily create components which take an `as` prop to change which component they should render as
 
